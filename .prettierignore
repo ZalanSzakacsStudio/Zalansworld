@@ -1,0 +1,7 @@
+/public
+/coverage/
+/dist/
+/test/
+.env
+/node_modules/
+*.lock
