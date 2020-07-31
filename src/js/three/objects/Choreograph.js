@@ -2,9 +2,7 @@ import MovingWall from './MovingWall';
 import * as THREE from 'three';
 import { WALL_DEPTH, WALL_HEIGHT, WALL_WIDTH } from '../../viewer-config';
 import getTexture from './TextureHelper';
-import { PositionalAudioHelper } from 'three/examples/jsm/helpers/PositionalAudioHelper';
 import { AUDIO_ENHANCEMENT, DEBUG_MODE } from '@/js/viewer-config';
-import { getWall } from '@/js/three/objects/ReflectiveWall';
 
 class Choreograph {
     /**
