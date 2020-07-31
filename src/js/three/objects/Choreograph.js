@@ -97,19 +97,15 @@ class Choreograph {
             getTexture('A', .9),
             new THREE.Vector3(1000, WALL_HEIGHT / 2, 0), // Start position
             2,
-            33,
+            40,
             false);
         three.setInitialRotation(new THREE.Vector3(0, THREE.Math.degToRad(90), 0));
         three.setTargetPosition(new THREE.Vector3(WALL_DEPTH / 2 - WALL_WIDTH / 2, WALL_HEIGHT / 2, 0));
-        three.addTargetPosition(new THREE.Vector3(WALL_DEPTH / 2, WALL_HEIGHT / 2, 0), {
-            delay: 10,
-            timing: 4
-        });
-        three.setDestroyOnComplete(true);
+        three.setDestroyOnComplete(true, 20);
         this.walls.push(three);
 
-        const threeTargetPosition = new THREE.Vector3(WALL_DEPTH / 5 + WALL_WIDTH / 2, WALL_HEIGHT / 2, 0);
-        const threeTargetScale = new THREE.Vector2(diagonalWallWidth / 2, WALL_HEIGHT);
+        const fourTargetPosition = new THREE.Vector3(WALL_DEPTH / 5 + WALL_WIDTH / 2, WALL_HEIGHT / 2, 0);
+        const fourTargetScale = new THREE.Vector2(diagonalWallWidth / 2, WALL_HEIGHT);
         const four = new MovingWall(this.object,
             new THREE.Vector2(diagonalWallWidth, WALL_HEIGHT), // Size of the wall
             getTexture('B', .9),
@@ -118,8 +114,8 @@ class Choreograph {
             8,
             false);
         four.setInitialRotation(new THREE.Vector3(0, THREE.Math.degToRad(-45), 0));
-        four.setTargetPosition(threeTargetPosition);
-        four.addTargetScale(threeTargetScale, {
+        four.setTargetPosition(fourTargetPosition);
+        four.addTargetScale(fourTargetScale, {
             delay: 0,
             timing: 4
         });
@@ -135,9 +131,9 @@ class Choreograph {
         this.walls.push(four);
 
         const five = new MovingWall(this.object,
-            threeTargetScale, // Size of the wall
+            fourTargetScale, // Size of the wall
             getTexture('B', .9),
-            threeTargetPosition, // Start position
+            fourTargetPosition, // Start position
             32,
             0,
             true);
