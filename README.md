@@ -29,3 +29,13 @@ module.exports = {
 ```
 
 After changing the `publicPath` repeat the **Production** step.
+
+#### Audio
+In src/js/three/objects/Choreograph.js on line 54 an audio file is loaded and set to the walls.
+If you want multiple audio files, repeat line 56:
+```
+        audioLoader.load('assets/sounds/SlidingStoneLong.mp3', buffer => {
+```
+Change the mp3 filename and set it to the a wall of your liking.
+
+Want all walls to have a random loaded sound asigned? Just randomly pick walls from the `this.walls` array and set the audio for the right loader.
