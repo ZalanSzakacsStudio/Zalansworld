@@ -8,6 +8,12 @@
 - Run the command `git clone <url>` (url = the url copied from step 3)
 This will clone the repository in the directory `zalansworld`
 
+### Updating the project
+Now that you have installed git we do not have to download the project over and over
+Follow the steps below to update the project:
+- Open the terminal and navigate (cd command) to project directory
+- Run the command `git pull`
+
 ### Branches
 There might be multiple branches in the git project, to switch a branch:
 - Open the terminal and navigate (cd command) to project directory
