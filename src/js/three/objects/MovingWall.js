@@ -5,6 +5,12 @@ import { getWall } from './ReflectiveWall';
 
 class MovingWall extends EventEmitter {
     /**
+     * Name of the wall
+     * @type {string}
+     */
+    name = '';
+
+    /**
      * The object where the wall should be added to
      * @type {Object3D}
      */
@@ -358,6 +364,14 @@ class MovingWall extends EventEmitter {
      */
     setDebug() {
         this.debug = true;
+    }
+
+    /**
+     * Set the name for the wall
+     * @param name {string}
+     */
+    setName(name) {
+       this.name = name;
     }
 
     /**
