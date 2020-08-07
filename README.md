@@ -1,18 +1,24 @@
-# URANUS
+# ZALANSWORLD
 
-## Project setup
+## START
+- Install git https://git-scm.com/
+- Install NODE https://nodejs.org/en/
+- Copy the https link of the project -> https://github.com/ZalanSzakacsStudio/Zalansworld.git
+- Open terminal and navigate (cd command) to where the project should be located. 
+- Run the command `git clone <url>` (url = the url copied from step 3)
+This will clone the repository in the directory `zalansworld`
+
+### Branches
+There might be multiple branches in the git project, to switch a branch:
+- Open the terminal and navigate (cd command) to project directory
+- Run the command `git checkout <branchname>`
+- From here follow the steps below
+
+## Production
 ```
 npm install
 ```
 
-## Development
-
-```
-npm run serve
-```
-After serving the application, it will show on what address the application is served on. `localhost:8080`.
-
-## Production
 ```
 npm run build
 ```
@@ -28,14 +34,14 @@ module.exports = {
     ...
 ```
 
+## Development
+```
+npm install
+```
+
+```
+npm run serve
+```
+After serving the application, it will show on what address the application is served on. `localhost:8080`.
+
 After changing the `publicPath` repeat the **Production** step.
-
-#### Audio
-In src/js/three/objects/Choreograph.js on line 54 an audio file is loaded and set to the walls.
-If you want multiple audio files, repeat line 56:
-```
-        audioLoader.load('assets/sounds/SlidingStoneLong.mp3', buffer => {
-```
-Change the mp3 filename and set it to the a wall of your liking.
-
-Want all walls to have a random loaded sound asigned? Just randomly pick walls from the `this.walls` array and set the audio for the right loader.
