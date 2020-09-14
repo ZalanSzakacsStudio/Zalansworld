@@ -210,6 +210,7 @@ class MovingWall extends EventEmitter {
      * Dispose the geometry and material
      */
     disposeWall() {
+        this.stopAudio();
         if (this.wall.parent !== null) {
             this.object.remove(this.wall);
         }
@@ -288,7 +289,6 @@ class MovingWall extends EventEmitter {
      * OnComplete function called when tween has ended
      */
     onComplete() {
-        this.stopAudio();
         if (this.chains > 0) {
             this.chains--;
         }
@@ -371,7 +371,7 @@ class MovingWall extends EventEmitter {
      * @param name {string}
      */
     setName(name) {
-       this.name = name;
+        this.name = name;
     }
 
     /**
