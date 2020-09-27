@@ -8,7 +8,7 @@ import * as THREE from 'three';
  * @returns {MeshLambertMaterial}
  */
 const getTexture = (letter, opacity = 1, rotation = 0) => {
-    const wallTexture = new THREE.TextureLoader().load(`assets/images/VOID_material_${ letter }.png`);
+    const wallTexture = new THREE.TextureLoader().load(`assets/images/VOID_material_${ letter }${ window.mobileCheck() ? '_low' : '' }.png`);
     wallTexture.wrapS = THREE.RepeatWrapping;
     wallTexture.wrapT = THREE.RepeatWrapping;
     wallTexture.rotation = rotation;
