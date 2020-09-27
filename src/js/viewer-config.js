@@ -5,9 +5,9 @@ export const WALL_WIDTH = 4000 * SCENE_SCALE;
 export const WALL_DEPTH = 35000 * SCENE_SCALE;
 
 export const SCENE_POSITION = {
-    START: [(WALL_DEPTH / 2) - (1000 * SCENE_SCALE), 0, 0],
-    BETWEEN: [-(WALL_DEPTH / 2) + (13000 * SCENE_SCALE), 0, 0],
-    END: [-(WALL_DEPTH / 2) - WALL_WIDTH, 0, 0]
+    START: [(WALL_DEPTH / 2) - (1000 * SCENE_SCALE), -WALL_HEIGHT / 2, 0],
+    BETWEEN: [-(WALL_DEPTH / 2) + (13000 * SCENE_SCALE), -WALL_HEIGHT / 2, 0],
+    END: [-(WALL_DEPTH / 2) - WALL_WIDTH, -WALL_HEIGHT / 2, 0]
 };
 
 export const SCENE_TIMING = 52;

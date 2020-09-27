@@ -101,8 +101,8 @@ export default {
         setupControls() {
             this.controls = new Controls(this.camera, this.renderer.domElement);
 
-            this.camera.position.set(0, WALL_HEIGHT / 2, 0);
-            this.controls.target.set(1, WALL_HEIGHT / 2, 0);
+            this.camera.position.set(0, 0, 0);
+            this.controls.target.set(1, 0, 0);
             this.controls.update();
         },
         setupBox() {
@@ -171,7 +171,6 @@ export default {
                 emissive: 5,
                 side: THREE.DoubleSide
             });
-            whiteSpace.position.y = WALL_HEIGHT / 2;
             whiteSpace.position.x = WALL_DEPTH / 2 - 50;
             this.sceneElements.add(whiteSpace);
 
