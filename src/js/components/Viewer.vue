@@ -110,20 +110,22 @@ export default {
             this.sceneElements.position.copy(new THREE.Vector3(...SCENE_POSITION.START));
             this.scene.add(this.sceneElements);
 
-            const reflectorPosition = window.mobileCheck() ? 5 : .3;
+            const reflectorPosition = window.mobileCheck() ? 3 : .3;
             /*
             FLOOR
             */
             const floorSize = new THREE.Vector2(WALL_DEPTH, WALL_WIDTH);
-            const floor = getWall(floorSize, getTexture('M', .4));
+            const floor = getWall(floorSize, getTexture('M', 1));
             floor.rotation.x = -Math.PI / 2;
             this.sceneElements.add(floor);
 
-            const floorMirror = getMirror(floorSize, 0x010e2a);
-            floorMirror.scale.add(new THREE.Vector3(0, WALL_WIDTH * .00001, 0));
-            floorMirror.position.y -= reflectorPosition;
-            floorMirror.rotation.copy(floor.rotation);
-            this.sceneElements.add(floorMirror);
+            if (!mobileCheck()) {
+                const floorMirror = getMirror(floorSize, 0x010e2a);
+                floorMirror.scale.add(new THREE.Vector3(0, WALL_WIDTH/* + (reflectorPosition * 2)*/, 0));
+                floorMirror.position.y -= reflectorPosition;
+                floorMirror.rotation.copy(floor.rotation);
+                this.sceneElements.add(floorMirror);
+            }
 
             /*
             LEFT WALL
@@ -135,9 +137,9 @@ export default {
             this.sceneElements.add(leftWall);
 
             const leftWallMirrorSize = leftWallSize.clone();
-            leftWallMirrorSize.x -= 20;
             const leftWallMirror = getMirror(leftWallMirrorSize, 0xffffff);
             leftWallMirror.position.copy(leftWall.position);
+            leftWallMirror.position.y -= reflectorPosition;
             leftWallMirror.position.z -= reflectorPosition;
             this.sceneElements.add(leftWallMirror);
 
@@ -151,9 +153,10 @@ export default {
             rightWall.rotateY(THREE.Math.degToRad(180));
             this.sceneElements.add(rightWall);
 
-            const rightWallMirror = getMirror(rightWallSize, 0xffffff);
+            const rightWallMirror = getMirror(rightWallSize/*.add(new THREE.Vector2(0, reflectorPosition * 2))*/, 0xffffff);
             rightWallMirror.rotation.copy(rightWall.rotation);
             rightWallMirror.position.copy(rightWall.position);
+            rightWallMirror.position.y -= reflectorPosition;
             rightWallMirror.position.z += reflectorPosition;
             this.sceneElements.add(rightWallMirror);
 
