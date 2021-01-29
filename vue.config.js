@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: 'zalansconcept',
+    publicPath: '',
     chainWebpack: config => {
         // Manually set the entry point
         config
