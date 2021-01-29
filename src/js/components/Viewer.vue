@@ -35,7 +35,6 @@
 <script>
 import * as THREE from 'three';
 import TWEEN from '@tweenjs/tween.js';
-import { VRButton } from 'three/examples/jsm/webxr/VRButton';
 import {
     AUDIO_ENHANCEMENT,
     SCENE_POSITION,
@@ -174,6 +173,7 @@ export default {
                 emissive: 5,
                 side: THREE.DoubleSide
             });
+            whiteSpace.position.y += WALL_HEIGHT / 2;
             whiteSpace.position.x = WALL_DEPTH / 2 - 50;
             this.sceneElements.add(whiteSpace);
 
@@ -213,11 +213,6 @@ export default {
         },
         setupViewer() {
             this.$refs['viewer'].appendChild(this.renderer.domElement);
-            const vrButton = VRButton.createButton(this.renderer);
-            this.$refs['viewer'].appendChild(vrButton);
-            vrButton.addEventListener('click', () => {
-                this.start();
-            });
         },
         setupLighting() {
             // Add an ambient light to the scene
