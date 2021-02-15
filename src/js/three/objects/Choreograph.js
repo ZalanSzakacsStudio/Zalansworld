@@ -58,7 +58,7 @@ class Choreograph {
                 const audio = new THREE.PositionalAudio(listener);
                 audio.setDirectionalCone(360, 360, 1);
                 audio.setRefDistance(AUDIO_ENHANCEMENT);
-                audio.setVolume(.1);
+                audio.setVolume(1);
                 audio.setBuffer(buffer);
                 wall.setAudio(audio);
             });
