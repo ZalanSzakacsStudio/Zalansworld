@@ -110,15 +110,17 @@ export default {
             this.scene.add(this.sceneElements);
 
             const reflectorPosition = window.mobileCheck() ? 3 : .3;
+            const floorOpacity = window.mobileCheck() ? 1 : .4;
+
             /*
             FLOOR
             */
             const floorSize = new THREE.Vector2(WALL_DEPTH, WALL_WIDTH);
-            const floor = getWall(floorSize, getTexture('M', 1));
+            const floor = getWall(floorSize, getTexture('M', floorOpacity));
             floor.rotation.x = -Math.PI / 2;
             this.sceneElements.add(floor);
 
-            if (!mobileCheck()) {
+            if (!window.mobileCheck()) {
                 const floorMirror = getMirror(floorSize, 0x010e2a);
                 floorMirror.scale.add(new THREE.Vector3(0, WALL_WIDTH/* + (reflectorPosition * 2)*/, 0));
                 floorMirror.position.y -= reflectorPosition;
