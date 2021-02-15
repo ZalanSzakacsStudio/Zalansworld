@@ -13,7 +13,7 @@
             >
                 <div class="overlay__background">
                     <p class="overlay__text">
-                        WELCOME TO ZALANSWORLD
+                        WELCOME TO CATOPTRICA
                     </p>
                 </div>
                 <button
